@@ -21,10 +21,30 @@ int main()
 }
 
 
+#include <iostream>
+using namespace std;
 
-
-
-
+int main() {
+    double diameter, radius, area;
+    
+    // This line is to constant the PI
+    const double PI = 3.141592653589793;
+    
+    //This line to input the diameter
+    cout<<"Enter the Diameter: ";cin>>diameter;
+    
+    //getting the radius
+    radius = diameter / 2.0;
+    
+    //Calculation of the area it will calculate first the radius * radius
+    area = PI * (radius * radius);
+    
+    //Output of the Calculation
+    cout<<"The Area is: "<<area;
+    
+    
+    return 0;
+}
 
 
 
