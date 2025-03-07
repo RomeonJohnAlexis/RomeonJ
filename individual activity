@@ -1,0 +1,95 @@
+1.)
+#include <iostream>
+using namespace std;
+
+int main() {
+  for (int i =  10; i >= 0; i--) {
+    cout << i << "\n";
+  }
+  
+  return 0;
+}
+
+2.)
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 10; i >= 0; i -= 2) {
+        cout << i << "\n ";
+    }
+    
+    return 0;
+}
+
+3.)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int sum = 0;
+    
+    // Outer loop to track progress
+    for (int i = 0; i < 1; i++) {
+        // Inner loop to calculate the sum
+        for (int term = 5; term <= 50; term += 3) {
+            cout << term;
+            sum += term;
+                     
+            if (term + 3 <= 50) {
+                cout << " + ";
+            }
+        }
+    }
+    
+    cout << " = " << sum << endl;
+    cout << "The sum of the series 5 + 8 + 11 + ... + 50 is: " << sum << endl;
+    
+    return 0;
+}
+
+4.)
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch;
+    bool shouldExit = false;
+    
+    for (int i = 1; i <= 5 && !shouldExit; i++) {
+        cout << "Character " << i << ":" << endl;
+        
+        for (int j = 1; j <= 1; j++) {
+            cout << "Enter a character: ";
+            cin >> ch;
+            
+            if (ch == 'n') {
+                cout << "Exiting the program as 'n' was entered." << endl;
+                shouldExit = true;
+                break;
+            }
+            
+            cout << "You entered: " << ch << endl;
+        }
+    }
+    
+    cout << "Program completed." << endl;
+    
+    return 0;
+}
+
+5.)
+#include <iostream>
+using namespace std;
+
+int main() {
+    ;
+    for (int i = 0; i <= 5; i++) {
+        cout << "Multiplication Table for " << i << ":" << endl;
+        
+        for (int j = 1; j <= 10; j++) {
+            cout << i << " x " << j << " = " << (i * j) << endl;
+        }
+    }
+    return 0;
+}
