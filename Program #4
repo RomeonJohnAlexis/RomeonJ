@@ -1,0 +1,173 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string name;
+    int birthYear, birthMonth, birthDay;
+    int currentYear, currentMonth, currentDay;
+    
+    cout << "Enter your name: ";
+    getline(cin, name);
+    
+    cout << "Enter your birth year: ";
+    cin >> birthYear;
+    
+    cout << "Enter your birth month (1-12): ";
+    cin >> birthMonth;
+    
+    cout << "Enter your birth day (1-31): ";
+    cin >> birthDay;
+    
+    cout << "Enter current year: ";
+    cin >> currentYear;
+    
+    cout << "Enter current month (1-12): ";
+    cin >> currentMonth;
+    
+    cout << "Enter current day (1-31): ";
+    cin >> currentDay;
+    
+    // Calculate age without if statements
+    int ageYears = currentYear - birthYear;
+    int monthDayFactor = (currentMonth < birthMonth) * 1 + 
+                          (currentMonth == birthMonth && currentDay < birthDay) * 1;
+    ageYears = ageYears - monthDayFactor;
+    
+    cout << "Name: " << name << endl;
+    cout << "Age: " << ageYears << " years" << endl;
+    
+    return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+ {
+    int year;
+    cout << "Enter a year: ";
+    cin >> year;
+    
+    // A leap year divisible by 4
+    // But if it's divisible by 100, it must also be divisible by 400 to be a leap year
+    bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    
+    if (isLeapYear) {
+        cout << year << " is a leap year." << endl;
+    } else {
+        cout << year << " is not a leap year." << endl;
+    }
+    
+    return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double num1, num2, num3;
+    cout << "Enter three numbers: ";
+    cin >> num1 >> num2 >> num3;
+    
+    // Find the largest number
+    double largest = num1;
+    
+    if (num2 > largest) {
+        largest = num2;
+    }
+    
+    if (num3 > largest) {
+        largest = num3;
+    }
+    
+    cout << "The largest number is: " << largest << endl;
+    
+    return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double num1, num2;
+    char op;
+    
+    cout << "Enter first number: ";
+    cin >> num1;
+    
+    cout << "Enter operator (+, -, *, /): ";
+    cin >> op;
+    
+    cout << "Enter second number: ";
+    cin >> num2;
+    
+    switch (op) {
+        case '+':
+            cout << num1 << " + " << num2 << " = " << (num1 + num2) << endl;
+            break;
+        case '-':
+            cout << num1 << " - " << num2 << " = " << (num1 - num2) << endl;
+            break;
+        case '*':
+            cout << num1 << " * " << num2 << " = " << (num1 * num2) << endl;
+            break;
+        case '/':
+            if (num2 != 0) {
+                cout << num1 << " / " << num2 << " = " << (num1 / num2) << endl;
+            } else {
+                cout << "Error: Division by zero" << endl;
+            }
+            break;
+        default:
+            cout << "Error: Invalid operator" << endl;
+    }
+    
+    return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+ {
+    double grade, sum = 0, average;
+    const int QUARTERS = 4;
+    
+    cout << "Enter the grades for four quarters:\n";
+    
+    for (int i = 0; i < QUARTERS; i++) {
+        bool validInput = false;
+        
+        while (!validInput) {
+            cout << "Enter grade for Quarter " << (i + 1) << ": ";
+            cin >> grade;
+            
+            // Input validation grades should be between 0 and 100
+            if (grade >= 0 && grade <= 100) {
+                sum += grade;
+                validInput = true;
+            } else {
+                cout << "Invalid grade. Please enter a value between 0 and 100.\n";
+                // Clear the error state of cin in case of invalid input
+                cin.clear();
+                // Ignore any remaining characters in the input buffer
+                cin.ignore(10000, '\n');
+            }
+        }
+    }
+    
+    average = sum / QUARTERS;
+    
+    cout << "Average grade: " << average << endl;
+    
+    return 0;
+}
