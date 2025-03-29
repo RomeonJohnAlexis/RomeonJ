@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string getUserName() {
+    string name;
+    cout << "Enter user name: ";
+    getline(cin, name);
+    cout << "Hello " << name << endl;
+    return name;
+}
+
+void getTwoNumbers(float &num1, float &num2) {
+    cout << "\nEnter two numbers: " << endl;
+    cin >> num1;
+    cin >> num2;
+}
+
+float addNumbers(float num1, float num2) {
+    return num1 + num2;
+}
+
+float subtractNumbers(float num1, float num2) {
+    return num1 - num2;
+}
+
+float multiplyNumbers(float num1, float num2) {
+    return num1 * num2;
+}
+
+float divideNumbers(float num1, float num2) {
+    if (num2 == 0) {
+        cout << "Error: Division by zero!" << endl;
+        return 0;
+    }
+    return num1 / num2;
+}
+
+int getModulus(float num1) {
+    return static_cast<int>(num1) % 1;
+}
+
+int main() {
+    string name = getUserName();
+    
+    float num1, num2;
+    getTwoNumbers(num1, num2);
+    cout << "\nThe sum of two numbers is: " << addNumbers(num1, num2) << endl;
+    cout << "The difference of two numbers is: " << subtractNumbers(num1, num2) << endl;
+    cout << "The product of two numbers is: " << multiplyNumbers(num1, num2) << endl;
+    cout << "The quotient of two numbers is: " << divideNumbers(num1, num2) << endl;
+    cout << "The modulus of first number is: " << getModulus(num1) << endl;
+    
+    return 0;
